@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill Generator</title>
+</head>
+<body>
+    <h1>Electricity Bill Generator</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="current_reading">Current Meter Reading:</label>
+        <input type="number" id="current_reading" name="current_reading" required><br><br>
+
+        <label for="previous_reading">Previous Meter Reading:</label>
+        <input type="number" id="previous_reading" name="previous_reading" required><br><br>
+
+        <label for="phase_type">Phase Type:</label>
+        <select id="phase_type" name="phase_type" required>
+            <option value="2_phase">2 Phase</option>
+            <option value="3_phase">3 Phase</option>
+        </select><br><br>
+
+        <button type="submit">Generate Bill</button>
+    </form>
+</body>
+</html>
